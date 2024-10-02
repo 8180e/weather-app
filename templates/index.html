@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Weather Forecast App by 8180e</title>
+{% endblock %}
+
+{% block body %}
+<h1>Weather App</h1>
+
+<form action="/" method="POST">
+    <input type="text" name="city_name" id="city_name">
+    <input type="submit" value="Search">
+</form>
+
+<br><br><br>
+
+<p id="index"></p>
+
+<div class="content" id="content">
+    <a href="#" id="left"><i class="arrow left"></i></a>
+    <a href="#" id="right"><i class="arrow right"></i></a>
+    <br>
+    Weather Forecast for <span class="city_name">{{ city.name }}</span>
+    <div class="right_align right_align_date">{{ city.date[i] }}</div>
+    <hr>
+    <br>
+    <div class="main">
+        <img src="/static/icons/{{ city.icon[i] }}">
+        <p style="font-size: xxx-large;">{{ city.temperature[i] }}°C</p>
+        <div class="right_align">
+            <i>Feels Like: {{ city.feels_like[i] }}°C</i>
+            <br>
+            Probability of Precipitation: <span>{{ city.probability_of_precipitation[i] }}%</span>
+        </div>
+    </div>
+    <span class="weather">{{ city.weather[i] }}</span>
+    <br>
+    <hr>
+    Humidity: <span class="humidity">{{ city.humidity[i] }}%</span>
+    <div class="right_align right_align_pressure">Pressure: {{ city.pressure[i] }} hPa</div>
+    <br>
+    <hr>
+    Cloudiness: <span class="cloudiness">{{ city.cloudiness[i] }}%</span>
+    <div class="right_align right_align_wind">Wind Speed: {{ city.wind_speed[i] }} meter/sec</div>
+    <br>
+    <hr>
+    Visibility: <span class="visibility">{{ city.visibility[i] }} km</span>
+</div>
+
+<script src="/static/js/main.js"></script>
+{% endblock %}

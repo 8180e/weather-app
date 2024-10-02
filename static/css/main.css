@@ -1,0 +1,48 @@
+body {
+    font-family: sans-serif;
+    font-size: large;
+    margin: 50px;
+    background-color: aliceblue;
+}
+
+.content {
+    background-color: white;
+    position: relative;
+    height: fit-content;
+    width: 540px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.right_align {
+    margin-left: 50px;
+    float: right;
+}
+
+.main {
+    display: flex;
+}
+.main img {
+    margin-right: 10px;
+    display: block;
+  }
+.main p {margin: 0;}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+.right {
+    float: right;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+.left {
+    float: left;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
