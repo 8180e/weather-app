@@ -25,6 +25,7 @@ def weather_forecast(city):
         info["Icon"].append(weather["icon"] + "@2x.png")
         info["Cloudiness"].append(lst["clouds"]["all"])
         info["Wind Speed"].append(lst["wind"]["speed"])
+        print(lst)
         info["Visibility"].append(int(lst["visibility"]) / 1000)
         info["Probability of Precipitation"].append(int(float(lst["pop"]) * 100))
         info["Date"].append(lst["dt_txt"])
