@@ -28,13 +28,13 @@ function updateWeatherData(cityName) {
 document.getElementById("left").addEventListener("click", function(e) {
     e.preventDefault();
     if (i > 0) {
-        i -= 1;
-        updateWeatherData(document.getElementById("city_name").value || "Paris");
+        i --;
+        updateWeatherData(document.getElementById("city_name").value);
     }
 });
 
 document.getElementById("right").addEventListener("click", function(e) {
     e.preventDefault();
-    i += 1;
-    updateWeatherData(document.getElementById("city_name").value || "Paris");
+    i ++;
+    updateWeatherData(document.getElementById("city_name").value);
 });
