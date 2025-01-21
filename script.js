@@ -1,9 +1,20 @@
+const notification = document.getElementById("notification");
+
 async function getData() {
   const city = document.getElementById("cityInput").value;
   const url = `https://weather-app-proxy.vercel.app/api/proxy?city=${city}`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
+      if (response.status === 404) {
+        notification.innerHTML = "City not found!";
+      } else {
+        notification.innerHTML = "An error occurred, please try again";
+      }
+      notification.classList.remove("animate");
+      notification.style.display = "inherit";
+      void notification.offsetWidth;
+      notification.classList.add("animate");
       throw new Error(`Response status: ${response.status}`);
     }
 
@@ -53,10 +64,5 @@ async function displayWeather(event) {
 
       document.getElementById("weatherData").prepend(img);
     }
-  } else {
-    notification.classList.remove("animate");
-    notification.style.display = "inherit";
-    void notification.offsetWidth;
-    notification.classList.add("animate");
   }
 }
