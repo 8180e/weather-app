@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weather App</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div id="notification">City doesn't exist!</div>
+  <div id="notification">City not found!</div>
 
-<form>
-  <label for="cityInput">Enter the city name:</label><br>
-  <input id="cityInput" type="text"><br>
-  <input type="submit" onclick="displayWeather(event)">
-</form>
+  <form>
+    <label for="cityInput">Enter the city name:</label><br>
+    <input id="cityInput" type="text"><br>
+    <input type="submit" onclick="displayWeather(event)">
+  </form>
 
-<h1 id="cityName"></h1>
-<div id="weatherData">
-  <div class="temp left">
-    <span id="maxTemp"></span>
-    <span id="minTemp"></span>
-  </div>
-  <div class="temp right">
-    <div class="current-weather">
-      <b id="weather"></b>
-      <span id="temp"></span>
+  <h1 id="cityName"></h1>
+  <div id="weatherData">
+    <div class="temp left">
+      <span id="maxTemp"></span>
+      <span id="minTemp"></span>
     </div>
-    <i id="feelsLike"></i>
+    <div class="temp right">
+      <div class="current-weather">
+        <b id="weather"></b>
+        <span id="temp"></span>
+      </div>
+      <i id="feelsLike"></i>
+    </div>
+    <br>
+    <div class="informations">
+      <span id="pressure" class="left"></span><span id="humidity" class="right"></span><br>
+      <span id="windSpeed" class="left"></span><span id="windDirection" class="right"></span><br>
+      <span id="cloudiness" class="left"></span>
+    </div>
   </div>
-  <br>
-  <div class="informations">
-    <span id="pressure" class="left"></span><span id="humidity" class="right"></span><br>
-    <span id="windSpeed" class="left"></span><span id="windDirection" class="right"></span><br>
-    <span id="cloudiness" class="left"></span>
-  </div>
-</div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
+
 </html>
