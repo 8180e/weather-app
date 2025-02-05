@@ -1,6 +1,13 @@
 @keyframes notification {
-  from {opacity: 1; display: block;}
-  to {opacity: 0; display: none;}
+  from {
+    opacity: 1;
+    display: block;
+  }
+
+  to {
+    opacity: 0;
+    display: none;
+  }
 }
 
 body {
@@ -71,11 +78,13 @@ input[type=submit]:hover {
   font-size: 27px;
 }
 
-.temp>span, .temp>i {
+.temp>span,
+.temp>i {
   display: block;
 }
 
-#maxTemp, .current-weather {
+#maxTemp,
+.current-weather {
   margin-bottom: 20px;
 }
 
