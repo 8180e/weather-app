@@ -5,22 +5,24 @@ async function getData() {
   const url = `https://weather-app-proxy.vercel.app/api/proxy?city=${city}`;
   try {
     const response = await fetch(url);
+
     if (!response.ok) {
-      if (response.status === 404) {
-        notification.innerHTML = "City not found!";
-      } else {
-        notification.innerHTML = "An error occurred, please try again";
-      }
-      notification.classList.remove("animate");
-      notification.style.display = "inherit";
-      void notification.offsetWidth;
-      notification.classList.add("animate");
       throw new Error(`Response status: ${response.status}`);
     }
 
     const json = await response.json();
     return json;
   } catch (error) {
+    if (error.message.slice(-3) === "404") {
+      notification.innerHTML = "City not found!";
+    } else {
+      notification.innerHTML = "An error occurred, please try again";
+    }
+
+    notification.classList.remove("animate");
+    notification.style.display = "inherit";
+    void notification.offsetWidth;
+    notification.classList.add("animate");
     console.error(error.message);
   }
 }
